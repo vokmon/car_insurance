@@ -1,0 +1,54 @@
+{
+  "name": "car_insurance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vokmon/car_insurance.git"
+  },
+  "author": "View",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vokmon/car_insurance/issues"
+  },
+  "homepage": "https://github.com/vokmon/car_insurance#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.3.0",
+    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.4.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.0.0",
+    "chai-bignumber": "^3.0.0",
+    "concurrently": "^4.1.0",
+    "coveralls": "^3.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-mocha-no-only": "^1.1.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "ethereumjs-util": "^6.0.0",
+    "ganache-cli": "^6.4.1",
+    "ganache-cli-coverage": "https://github.com/frangio/ganache-cli/releases/download/v6.4.1-coverage/ganache-cli-coverage-6.4.1.tgz",
+    "micromatch": "^4.0.2",
+    "nodemon": "^1.19.0",
+    "openzeppelin-docsite": "github:OpenZeppelin/openzeppelin-docsite#ee1df82d52ad3df4337b20392627975091f8d5b3",
+    "openzeppelin-test-helpers": "^0.4",
+    "solhint": "2.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1"
+  }
+}

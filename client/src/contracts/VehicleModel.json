@@ -1,0 +1,1823 @@
+{
+  "contractName": "VehicleModel",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "models",
+      "outputs": [
+        {
+          "name": "brand",
+          "type": "string"
+        },
+        {
+          "name": "model",
+          "type": "string"
+        },
+        {
+          "name": "numberOfSeats",
+          "type": "uint8"
+        },
+        {
+          "name": "transmission",
+          "type": "uint8"
+        },
+        {
+          "name": "engineSize",
+          "type": "uint8"
+        },
+        {
+          "name": "fuelType",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "id",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_brand",
+          "type": "string"
+        },
+        {
+          "name": "_model",
+          "type": "string"
+        },
+        {
+          "name": "_numberOfSeats",
+          "type": "uint8"
+        },
+        {
+          "name": "_transmission",
+          "type": "uint256"
+        },
+        {
+          "name": "_engineSize",
+          "type": "uint8"
+        },
+        {
+          "name": "_fuelType",
+          "type": "uint256"
+        }
+      ],
+      "name": "addModel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"models\",\"outputs\":[{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"model\",\"type\":\"string\"},{\"name\":\"numberOfSeats\",\"type\":\"uint8\"},{\"name\":\"transmission\",\"type\":\"uint8\"},{\"name\":\"engineSize\",\"type\":\"uint8\"},{\"name\":\"fuelType\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_brand\",\"type\":\"string\"},{\"name\":\"_model\",\"type\":\"string\"},{\"name\":\"_numberOfSeats\",\"type\":\"uint8\"},{\"name\":\"_transmission\",\"type\":\"uint256\"},{\"name\":\"_engineSize\",\"type\":\"uint8\"},{\"name\":\"_fuelType\",\"type\":\"uint256\"}],\"name\":\"addModel\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"id\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"addModel(string,string,uint8,uint256,uint8,uint256)\":{\"details\":\"add a new vehicle model\\r\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/F/projects/blockchain/car_insurance/contracts/VehicleModel.sol\":\"VehicleModel\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/F/projects/blockchain/car_insurance/contracts/VehicleModel.sol\":{\"keccak256\":\"0x7c5925eda6a719916edaba7b27e81a26ee02c5702da2c57aa021addf1ada1158\",\"urls\":[\"bzzr://d1ececc400fd3c3dd68b8a86773d11fb72242a42af3278b1eef40f5dcbe6aaf7\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610768806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80636a030ca9146100465780638f42a66f1461019d578063af640d0f1461031d575b600080fd5b6100726004803603602081101561005c57600080fd5b810190808035906020019092919050505061033b565b6040518080602001806020018760ff1660ff16815260200186600181111561009657fe5b60ff1681526020018560ff1660ff1681526020018460018111156100b657fe5b60ff168152602001838103835289818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b8381101561015c578082015181840152602081019050610141565b50505050905090810190601f1680156101895780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b61031b600480360360c08110156101b357600080fd5b81019080803590602001906401000000008111156101d057600080fd5b8201836020820111156101e257600080fd5b8035906020019184600183028401116401000000008311171561020457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561026757600080fd5b82018360208201111561027957600080fd5b8035906020019184600183028401116401000000008311171561029b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff16906020019092919080359060200190929190803560ff169060200190929190803590602001909291905050506104db565b005b61032561063f565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103e75780601f106103bc576101008083540402835291602001916103e7565b820191906000526020600020905b8154815290600101906020018083116103ca57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104855780601f1061045a57610100808354040283529160200191610485565b820191906000526020600020905b81548152906001019060200180831161046857829003601f168201915b5050505050908060020160009054906101000a900460ff16908060020160019054906101000a900460ff16908060020160029054906101000a900460ff16908060020160039054906101000a900460ff16905086565b6104e3610645565b6040518060c001604052808881526020018781526020018660ff16815260200185600181111561050f57fe5b600181111561051a57fe5b81526020018460ff16815260200183600181111561053457fe5b600181111561053f57fe5b81525090508060016000806000815460010191905081905581526020019081526020016000206000820151816000019080519060200190610581929190610697565b50602082015181600101908051906020019061059e929190610697565b5060408201518160020160006101000a81548160ff021916908360ff16021790555060608201518160020160016101000a81548160ff021916908360018111156105e457fe5b021790555060808201518160020160026101000a81548160ff021916908360ff16021790555060a08201518160020160036101000a81548160ff0219169083600181111561062e57fe5b021790555090505050505050505050565b60005481565b6040518060c001604052806060815260200160608152602001600060ff1681526020016000600181111561067557fe5b8152602001600060ff1681526020016000600181111561069157fe5b81525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106d857805160ff1916838001178555610706565b82800160010185558215610706579182015b828111156107055782518255916020019190600101906106ea565b5b5090506107139190610717565b5090565b61073991905b8082111561073557600081600090555060010161071d565b5090565b9056fea165627a7a72305820dd664cde6ace6b33ae7cacb9686529aef5f1c974325d24dccf38c1743d04246f0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80636a030ca9146100465780638f42a66f1461019d578063af640d0f1461031d575b600080fd5b6100726004803603602081101561005c57600080fd5b810190808035906020019092919050505061033b565b6040518080602001806020018760ff1660ff16815260200186600181111561009657fe5b60ff1681526020018560ff1660ff1681526020018460018111156100b657fe5b60ff168152602001838103835289818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b8381101561015c578082015181840152602081019050610141565b50505050905090810190601f1680156101895780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b61031b600480360360c08110156101b357600080fd5b81019080803590602001906401000000008111156101d057600080fd5b8201836020820111156101e257600080fd5b8035906020019184600183028401116401000000008311171561020457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561026757600080fd5b82018360208201111561027957600080fd5b8035906020019184600183028401116401000000008311171561029b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff16906020019092919080359060200190929190803560ff169060200190929190803590602001909291905050506104db565b005b61032561063f565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103e75780601f106103bc576101008083540402835291602001916103e7565b820191906000526020600020905b8154815290600101906020018083116103ca57829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104855780601f1061045a57610100808354040283529160200191610485565b820191906000526020600020905b81548152906001019060200180831161046857829003601f168201915b5050505050908060020160009054906101000a900460ff16908060020160019054906101000a900460ff16908060020160029054906101000a900460ff16908060020160039054906101000a900460ff16905086565b6104e3610645565b6040518060c001604052808881526020018781526020018660ff16815260200185600181111561050f57fe5b600181111561051a57fe5b81526020018460ff16815260200183600181111561053457fe5b600181111561053f57fe5b81525090508060016000806000815460010191905081905581526020019081526020016000206000820151816000019080519060200190610581929190610697565b50602082015181600101908051906020019061059e929190610697565b5060408201518160020160006101000a81548160ff021916908360ff16021790555060608201518160020160016101000a81548160ff021916908360018111156105e457fe5b021790555060808201518160020160026101000a81548160ff021916908360ff16021790555060a08201518160020160036101000a81548160ff0219169083600181111561062e57fe5b021790555090505050505050505050565b60005481565b6040518060c001604052806060815260200160608152602001600060ff1681526020016000600181111561067557fe5b8152602001600060ff1681526020016000600181111561069157fe5b81525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106d857805160ff1916838001178555610706565b82800160010185558215610706579182015b828111156107055782518255916020019190600101906106ea565b5b5090506107139190610717565b5090565b61073991905b8082111561073557600081600090555060010161071d565b5090565b9056fea165627a7a72305820dd664cde6ace6b33ae7cacb9686529aef5f1c974325d24dccf38c1743d04246f0029",
+  "sourceMap": "318:889:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;318:889:2;;;;;;;",
+  "deployedSourceMap": "318:889:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;318:889:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;701:42;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;701:42:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;701:42:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;701:42:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;799:405;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;799:405:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;799:405:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;799:405:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;799:405:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;799:405:2;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;799:405:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;799:405:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;799:405:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;799:405:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;682:14;;;:::i;:::-;;;;;;;;;;;;;;;;;;;701:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;799:405::-;985:25;;:::i;:::-;1013:155;;;;;;;;1033:6;1013:155;;;;1048:6;1013:155;;;;1063:14;1013:155;;;;;;1099:13;1086:27;;;;;;;;1013:155;;;;;;;;;;;;1122:11;1013:155;;;;;;1151:9;1142:19;;;;;;;;1013:155;;;;;;;;;;;985:183;;1192:6;1177;:12;1186:2;;1184:4;;;;;;;;;;1177:12;;;;;;;;;;;:21;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;799:405;;;;;;;:::o;682:14::-;;;;:::o;318:889::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "/**\r\n  * Characteric of a vehicle model in the market.\r\n  * This model only contain main infomation of vehicle model.\r\n  * Other specific information e.g. body number, color, year are stored in VehicleDetail.sol\r\n  */\r\n\r\npragma solidity ^0.5.0;\r\n\r\n// import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';\r\n\r\ncontract VehicleModel {\r\n\r\n  enum Transmission {\r\n    Manual,\r\n    Automatic\r\n  }\r\n\r\n  enum FuelType {\r\n    Pretol,\r\n    Deisel\r\n  }\r\n\r\n  struct ModelDetail {\r\n    string brand;\r\n    string model;\r\n    uint8 numberOfSeats;\r\n    Transmission transmission;\r\n    uint8 engineSize; // engine size in cc\r\n    FuelType fuelType; // fuel type - Pretol / Deisel\r\n  }\r\n\r\n  uint public id;\r\n  mapping(uint => ModelDetail) public models;\r\n\r\n  /**\r\n   * @dev add a new vehicle model\r\n   */\r\n  function addModel(\r\n    string memory _brand,\r\n    string memory _model,\r\n    uint8 _numberOfSeats,\r\n    uint _transmission,\r\n    uint8 _engineSize,\r\n    uint _fuelType) public {\r\n\r\n    ModelDetail memory detail = ModelDetail(\r\n      _brand,\r\n      _model,\r\n      _numberOfSeats,\r\n      Transmission(_transmission),\r\n      _engineSize,\r\n      FuelType(_fuelType)\r\n    );\r\n\r\n    models[++id] = detail;\r\n  }\r\n}",
+  "sourcePath": "F:/projects/blockchain/car_insurance/contracts/VehicleModel.sol",
+  "ast": {
+    "absolutePath": "/F/projects/blockchain/car_insurance/contracts/VehicleModel.sol",
+    "exportedSymbols": {
+      "VehicleModel": [
+        145
+      ]
+    },
+    "id": 146,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 81,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "221:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 145,
+        "linearizedBaseContracts": [
+          145
+        ],
+        "name": "VehicleModel",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "VehicleModel.Transmission",
+            "id": 84,
+            "members": [
+              {
+                "id": 82,
+                "name": "Manual",
+                "nodeType": "EnumValue",
+                "src": "372:6:2"
+              },
+              {
+                "id": 83,
+                "name": "Automatic",
+                "nodeType": "EnumValue",
+                "src": "385:9:2"
+              }
+            ],
+            "name": "Transmission",
+            "nodeType": "EnumDefinition",
+            "src": "347:52:2"
+          },
+          {
+            "canonicalName": "VehicleModel.FuelType",
+            "id": 87,
+            "members": [
+              {
+                "id": 85,
+                "name": "Pretol",
+                "nodeType": "EnumValue",
+                "src": "426:6:2"
+              },
+              {
+                "id": 86,
+                "name": "Deisel",
+                "nodeType": "EnumValue",
+                "src": "439:6:2"
+              }
+            ],
+            "name": "FuelType",
+            "nodeType": "EnumDefinition",
+            "src": "405:45:2"
+          },
+          {
+            "canonicalName": "VehicleModel.ModelDetail",
+            "id": 100,
+            "members": [
+              {
+                "constant": false,
+                "id": 89,
+                "name": "brand",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "482:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 88,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "482:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 91,
+                "name": "model",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "501:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 90,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "501:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 93,
+                "name": "numberOfSeats",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "520:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 92,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "520:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 95,
+                "name": "transmission",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "546:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Transmission_$84",
+                  "typeString": "enum VehicleModel.Transmission"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 94,
+                  "name": "Transmission",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 84,
+                  "src": "546:12:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Transmission_$84",
+                    "typeString": "enum VehicleModel.Transmission"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 97,
+                "name": "engineSize",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "578:16:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 96,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "578:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 99,
+                "name": "fuelType",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "622:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_FuelType_$87",
+                  "typeString": "enum VehicleModel.FuelType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 98,
+                  "name": "FuelType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 87,
+                  "src": "622:8:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_FuelType_$87",
+                    "typeString": "enum VehicleModel.FuelType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ModelDetail",
+            "nodeType": "StructDefinition",
+            "scope": 145,
+            "src": "456:220:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 102,
+            "name": "id",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "682:14:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 101,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "682:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 106,
+            "name": "models",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "701:42:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+              "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail)"
+            },
+            "typeName": {
+              "id": 105,
+              "keyType": {
+                "id": 103,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "709:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "701:28:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+                "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 104,
+                "name": "ModelDetail",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 100,
+                "src": "717:11:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ModelDetail_$100_storage_ptr",
+                  "typeString": "struct VehicleModel.ModelDetail"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 143,
+              "nodeType": "Block",
+              "src": "976:228:2",
+              "statements": [
+                {
+                  "assignments": [
+                    122
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 122,
+                      "name": "detail",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 143,
+                      "src": "985:25:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_memory_ptr",
+                        "typeString": "struct VehicleModel.ModelDetail"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 121,
+                        "name": "ModelDetail",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 100,
+                        "src": "985:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ModelDetail_$100_storage_ptr",
+                          "typeString": "struct VehicleModel.ModelDetail"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 135,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 124,
+                        "name": "_brand",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1033:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 125,
+                        "name": "_model",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 110,
+                        "src": "1048:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_numberOfSeats",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "1063:14:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 128,
+                            "name": "_transmission",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 114,
+                            "src": "1099:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 127,
+                          "name": "Transmission",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 84,
+                          "src": "1086:12:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Transmission_$84_$",
+                            "typeString": "type(enum VehicleModel.Transmission)"
+                          }
+                        },
+                        "id": 129,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1086:27:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Transmission_$84",
+                          "typeString": "enum VehicleModel.Transmission"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 130,
+                        "name": "_engineSize",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 116,
+                        "src": "1122:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 132,
+                            "name": "_fuelType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "1151:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 131,
+                          "name": "FuelType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 87,
+                          "src": "1142:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_FuelType_$87_$",
+                            "typeString": "type(enum VehicleModel.FuelType)"
+                          }
+                        },
+                        "id": 133,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1142:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_FuelType_$87",
+                          "typeString": "enum VehicleModel.FuelType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Transmission_$84",
+                          "typeString": "enum VehicleModel.Transmission"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_FuelType_$87",
+                          "typeString": "enum VehicleModel.FuelType"
+                        }
+                      ],
+                      "id": 123,
+                      "name": "ModelDetail",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 100,
+                      "src": "1013:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_ModelDetail_$100_storage_ptr_$",
+                        "typeString": "type(struct VehicleModel.ModelDetail storage pointer)"
+                      }
+                    },
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1013:155:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ModelDetail_$100_memory",
+                      "typeString": "struct VehicleModel.ModelDetail memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "985:183:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 136,
+                        "name": "models",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 106,
+                        "src": "1177:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+                          "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail storage ref)"
+                        }
+                      },
+                      "id": 139,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 138,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "++",
+                        "prefix": true,
+                        "src": "1184:4:2",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 137,
+                          "name": "id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 102,
+                          "src": "1186:2:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1177:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_storage",
+                        "typeString": "struct VehicleModel.ModelDetail storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 140,
+                      "name": "detail",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122,
+                      "src": "1192:6:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_memory_ptr",
+                        "typeString": "struct VehicleModel.ModelDetail memory"
+                      }
+                    },
+                    "src": "1177:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ModelDetail_$100_storage",
+                      "typeString": "struct VehicleModel.ModelDetail storage ref"
+                    }
+                  },
+                  "id": 142,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1177:21:2"
+                }
+              ]
+            },
+            "documentation": "@dev add a new vehicle model\r",
+            "id": 144,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addModel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 108,
+                  "name": "_brand",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "823:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 107,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "823:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 110,
+                  "name": "_model",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "850:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 109,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 112,
+                  "name": "_numberOfSeats",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "877:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 111,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "877:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 114,
+                  "name": "_transmission",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "904:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_engineSize",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "929:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "929:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_fuelType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "953:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "953:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "816:152:2"
+            },
+            "returnParameters": {
+              "id": 120,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "976:0:2"
+            },
+            "scope": 145,
+            "src": "799:405:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 146,
+        "src": "318:889:2"
+      }
+    ],
+    "src": "221:986:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/F/projects/blockchain/car_insurance/contracts/VehicleModel.sol",
+    "exportedSymbols": {
+      "VehicleModel": [
+        145
+      ]
+    },
+    "id": 146,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 81,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "221:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 145,
+        "linearizedBaseContracts": [
+          145
+        ],
+        "name": "VehicleModel",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "VehicleModel.Transmission",
+            "id": 84,
+            "members": [
+              {
+                "id": 82,
+                "name": "Manual",
+                "nodeType": "EnumValue",
+                "src": "372:6:2"
+              },
+              {
+                "id": 83,
+                "name": "Automatic",
+                "nodeType": "EnumValue",
+                "src": "385:9:2"
+              }
+            ],
+            "name": "Transmission",
+            "nodeType": "EnumDefinition",
+            "src": "347:52:2"
+          },
+          {
+            "canonicalName": "VehicleModel.FuelType",
+            "id": 87,
+            "members": [
+              {
+                "id": 85,
+                "name": "Pretol",
+                "nodeType": "EnumValue",
+                "src": "426:6:2"
+              },
+              {
+                "id": 86,
+                "name": "Deisel",
+                "nodeType": "EnumValue",
+                "src": "439:6:2"
+              }
+            ],
+            "name": "FuelType",
+            "nodeType": "EnumDefinition",
+            "src": "405:45:2"
+          },
+          {
+            "canonicalName": "VehicleModel.ModelDetail",
+            "id": 100,
+            "members": [
+              {
+                "constant": false,
+                "id": 89,
+                "name": "brand",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "482:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 88,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "482:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 91,
+                "name": "model",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "501:12:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 90,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "501:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 93,
+                "name": "numberOfSeats",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "520:19:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 92,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "520:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 95,
+                "name": "transmission",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "546:25:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Transmission_$84",
+                  "typeString": "enum VehicleModel.Transmission"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 94,
+                  "name": "Transmission",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 84,
+                  "src": "546:12:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Transmission_$84",
+                    "typeString": "enum VehicleModel.Transmission"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 97,
+                "name": "engineSize",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "578:16:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 96,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "578:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 99,
+                "name": "fuelType",
+                "nodeType": "VariableDeclaration",
+                "scope": 100,
+                "src": "622:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_FuelType_$87",
+                  "typeString": "enum VehicleModel.FuelType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 98,
+                  "name": "FuelType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 87,
+                  "src": "622:8:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_FuelType_$87",
+                    "typeString": "enum VehicleModel.FuelType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ModelDetail",
+            "nodeType": "StructDefinition",
+            "scope": 145,
+            "src": "456:220:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 102,
+            "name": "id",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "682:14:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 101,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "682:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 106,
+            "name": "models",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "701:42:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+              "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail)"
+            },
+            "typeName": {
+              "id": 105,
+              "keyType": {
+                "id": 103,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "709:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "701:28:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+                "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 104,
+                "name": "ModelDetail",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 100,
+                "src": "717:11:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ModelDetail_$100_storage_ptr",
+                  "typeString": "struct VehicleModel.ModelDetail"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 143,
+              "nodeType": "Block",
+              "src": "976:228:2",
+              "statements": [
+                {
+                  "assignments": [
+                    122
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 122,
+                      "name": "detail",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 143,
+                      "src": "985:25:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_memory_ptr",
+                        "typeString": "struct VehicleModel.ModelDetail"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 121,
+                        "name": "ModelDetail",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 100,
+                        "src": "985:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ModelDetail_$100_storage_ptr",
+                          "typeString": "struct VehicleModel.ModelDetail"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 135,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 124,
+                        "name": "_brand",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1033:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 125,
+                        "name": "_model",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 110,
+                        "src": "1048:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_numberOfSeats",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "1063:14:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 128,
+                            "name": "_transmission",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 114,
+                            "src": "1099:13:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 127,
+                          "name": "Transmission",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 84,
+                          "src": "1086:12:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Transmission_$84_$",
+                            "typeString": "type(enum VehicleModel.Transmission)"
+                          }
+                        },
+                        "id": 129,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1086:27:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Transmission_$84",
+                          "typeString": "enum VehicleModel.Transmission"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 130,
+                        "name": "_engineSize",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 116,
+                        "src": "1122:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 132,
+                            "name": "_fuelType",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "1151:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 131,
+                          "name": "FuelType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 87,
+                          "src": "1142:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_FuelType_$87_$",
+                            "typeString": "type(enum VehicleModel.FuelType)"
+                          }
+                        },
+                        "id": 133,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1142:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_FuelType_$87",
+                          "typeString": "enum VehicleModel.FuelType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Transmission_$84",
+                          "typeString": "enum VehicleModel.Transmission"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_FuelType_$87",
+                          "typeString": "enum VehicleModel.FuelType"
+                        }
+                      ],
+                      "id": 123,
+                      "name": "ModelDetail",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 100,
+                      "src": "1013:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_ModelDetail_$100_storage_ptr_$",
+                        "typeString": "type(struct VehicleModel.ModelDetail storage pointer)"
+                      }
+                    },
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1013:155:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ModelDetail_$100_memory",
+                      "typeString": "struct VehicleModel.ModelDetail memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "985:183:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 136,
+                        "name": "models",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 106,
+                        "src": "1177:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ModelDetail_$100_storage_$",
+                          "typeString": "mapping(uint256 => struct VehicleModel.ModelDetail storage ref)"
+                        }
+                      },
+                      "id": 139,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 138,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "++",
+                        "prefix": true,
+                        "src": "1184:4:2",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 137,
+                          "name": "id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 102,
+                          "src": "1186:2:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1177:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_storage",
+                        "typeString": "struct VehicleModel.ModelDetail storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 140,
+                      "name": "detail",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122,
+                      "src": "1192:6:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ModelDetail_$100_memory_ptr",
+                        "typeString": "struct VehicleModel.ModelDetail memory"
+                      }
+                    },
+                    "src": "1177:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ModelDetail_$100_storage",
+                      "typeString": "struct VehicleModel.ModelDetail storage ref"
+                    }
+                  },
+                  "id": 142,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1177:21:2"
+                }
+              ]
+            },
+            "documentation": "@dev add a new vehicle model\r",
+            "id": 144,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addModel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 108,
+                  "name": "_brand",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "823:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 107,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "823:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 110,
+                  "name": "_model",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "850:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 109,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 112,
+                  "name": "_numberOfSeats",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "877:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 111,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "877:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 114,
+                  "name": "_transmission",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "904:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_engineSize",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "929:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "929:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_fuelType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "953:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "953:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "816:152:2"
+            },
+            "returnParameters": {
+              "id": 120,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "976:0:2"
+            },
+            "scope": 145,
+            "src": "799:405:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 146,
+        "src": "318:889:2"
+      }
+    ],
+    "src": "221:986:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xfc461311Da39261daa75A9245557054ac02a79AC",
+      "transactionHash": "0xd24e69e639f0fa9d8fa1d544e1f0279541fabe97e9745c528d217522903be4cc"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-06-26T01:32:15.393Z",
+  "devdoc": {
+    "methods": {
+      "addModel(string,string,uint8,uint256,uint8,uint256)": {
+        "details": "add a new vehicle model\r"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
