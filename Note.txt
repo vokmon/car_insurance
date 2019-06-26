@@ -3,6 +3,8 @@
 
 ..\node_modules\.bin\truffle console
 
+..\node_modules\.bin\truffle test ./test/VehicleModel.test.js
+
 v = await VehicleModel.deployed()
-v.addModel('Toyota', 'Yarris', 5, 1, 1800, 0)
-v.addModel('Toyota', 'Passo', 5, 1, 1300, 0)
+v.addModel('Toyota', 'Yarris', 5, 1, 1800, 0, 3, 4)
+v.addModel('Toyota', 'Passo', 5, 1, 1300, 0, 3, 4)

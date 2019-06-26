@@ -1,7 +1,10 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
-var VehicleModel = artifacts.require('./VehicleModel.sol');
+/* eslint-disable no-undef */
+const SimpleStorage = artifacts.require("./SimpleStorage.sol");
+const VehicleModel = artifacts.require('./VehicleModel.sol');
+const Vehicle = artifacts.require('./Vehicle.sol');
 
 module.exports = async function(deployer) {
   await deployer.deploy(SimpleStorage);
   await deployer.deploy(VehicleModel);
+  await deployer.deploy(Vehicle);
 };
