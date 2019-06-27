@@ -5,6 +5,6 @@ const Vehicle = artifacts.require('./Vehicle.sol');
 
 module.exports = async function(deployer) {
   await deployer.deploy(SimpleStorage);
-  await deployer.deploy(VehicleModel);
-  await deployer.deploy(Vehicle);
+  const deployedVehicleModel = await deployer.deploy(VehicleModel);
+  await deployer.deploy(Vehicle, deployedVehicleModel.address);
 };

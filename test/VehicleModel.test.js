@@ -3,6 +3,7 @@ import { vehicleModelList } from './data';
 
 const VehicleModel = artifacts.require('VehicleModel');
 
+// eslint-disable-next-line no-unused-vars
 contract('VehicleModel', function([_, wallet, investor1, investor2, investor3]) {
 
   beforeEach(async function() {
@@ -89,4 +90,28 @@ contract('VehicleModel', function([_, wallet, investor1, investor2, investor3]) 
       }
     });
   });
+
+  describe('Get vehicle model year', function() {
+    it('can get model year successfully', async function() {
+      const year = await this.vehicleModel.getModelYear(1);
+      assert.equal(year.toNumber(), 2018, 'Model year is correct');
+    });
+
+    it('wrong model id', async function() {
+      try {
+        await this.vehicleModel.getModelYear(100);
+        assert.throws();
+      } catch(error) {
+        assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+      }
+
+      try {
+        await this.vehicleModel.getModelYear(0);
+        assert.throws();
+      } catch(error) {
+        assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+      }
+    });
+  });
+
 });

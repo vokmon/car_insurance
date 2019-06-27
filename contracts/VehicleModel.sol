@@ -91,4 +91,10 @@ contract VehicleModel {
     models[id] = detail;
     emit ModelAdded(id);
   }
+
+  function getModelYear(uint _modelId) public view returns (uint) {
+    require(_modelId > 0 && _modelId <= id, 'Invalid model id');
+    ModelDetail memory detail = models[_modelId];
+    return detail.modelYear;
+  }
 }
