@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   Divider,
   ListItemIcon,
@@ -14,6 +15,7 @@ export default function Sidebar({
   toggleDrawer, 
   menuList,
   open}) {
+    
   const sideMenuStyle = makeStyles({
     list: {
       width: 250,
@@ -21,6 +23,10 @@ export default function Sidebar({
     fullList: {
       width: 'auto',
     },
+    link: {
+      textDecoration: 'none',
+      color: 'inherit',
+    }
   });
   const classes = sideMenuStyle();
 
@@ -38,14 +44,20 @@ export default function Sidebar({
     >
       <List>
         { menuList.map((record, index) => (
-            <ListItem button key={record.text}>
-              <ListItemIcon>{record.icon}</ListItemIcon>
-              <ListItemText primary={record.text} />
-            </ListItem>
+          record.devider?
+            (<Divider key={index} />)
+            :
+            (
+              <Link to={record.path} key={record.path} className={classes.link}>
+                <ListItem button key={record.text}>
+                  <ListItemIcon>{record.icon}</ListItemIcon>
+                  <ListItemText primary={record.text} />
+                </ListItem>
+              </Link>
+            )
           ))
         }
       </List>
-      <Divider />
     </div>
     </SwipeableDrawer>
   );

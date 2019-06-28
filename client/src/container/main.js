@@ -5,19 +5,12 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core';
-
-
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { menuList, routes } from './constants';
 import MenuIcon from '@material-ui/icons/Menu';
 import Sidebar from '../component/sidebar';
 
-export default function PrimaryAppBar() {
-  const menuList = [
-    {text: 'Vehicle model', icon: <InboxIcon />}, 
-    {text: 'Vehicle', icon: <MailIcon />},  
-  ]
+export default function Main() {
 
   const [state, setState] = React.useState({
     sideMenu: false,
@@ -30,8 +23,39 @@ export default function PrimaryAppBar() {
     setState({ ...state, sideMenu: open });
   };
 
+  
+  const createRouter = () => {
+    return (
+      <div>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.main}
+          />
+        ))}
+      </div>
+    );
+  }
+  
+  const createTitleRouter = () => {
+    return (
+      <div>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.title}
+          />
+        ))}
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <Router>
       <AppBar position='static'>
         <Toolbar>
           <IconButton
@@ -42,12 +66,15 @@ export default function PrimaryAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
-            Vehicle blockchain
+          <Typography variant='h6' noWrap style={{marginLeft: 10}}>
+            { createTitleRouter() }
           </Typography>
         </Toolbar>
       </AppBar>
-      <Sidebar toggleDrawer={toggleDrawer} menuList={menuList} open={state.sideMenu} />
-    </div>
+        <Sidebar toggleDrawer={toggleDrawer} menuList={menuList} open={state.sideMenu} />
+        <div style={{marginTop: 40, marginBottom: 40, marginLeft: 20, marginRight: 20}}>
+          {createRouter()}
+        </div>
+    </Router>
   );
 }
