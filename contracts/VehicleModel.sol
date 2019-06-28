@@ -16,7 +16,7 @@ contract VehicleModel {
   }
 
   enum FuelType {
-    Pretol,
+    Petrol,
     Deisel
   }
 

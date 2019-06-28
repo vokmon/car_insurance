@@ -1,10 +1,14 @@
-import React from 'react';
+// import React from 'react';
 import getWeb3 from "../utils/getWeb3";
 
 import VehicleContract from "../contracts/Vehicle.json";
 import VehicleModelContract from "../contracts/VehicleModel.json";
 
- export let vehicleAbi = React.createContext({});
+// export let vehicleAbi = React.createContext({});
+
+
+export let vehicleModelContractInstance = null;
+export let vehicleContractInstance = null;
 
 export const initializeWeb3Api = async () => {
   try {
@@ -19,20 +23,20 @@ export const initializeWeb3Api = async () => {
     const networkId = await web3.eth.net.getId();
 
     const deployedNetwork = VehicleModelContract.networks[networkId];
-    const vehicleModelContractInstance = new web3.eth.Contract(
+    vehicleModelContractInstance = new web3.eth.Contract(
       VehicleModelContract.abi,
       deployedNetwork.address,
     );
 
-    const vehicleContractInstance = new web3.eth.Contract(
+    vehicleContractInstance = new web3.eth.Contract(
       VehicleContract.abi,
       deployedNetwork.address,
     );
 
-    vehicleAbi = await React.createContext({
-      vehicleModelContractInstance: vehicleModelContractInstance,
-      vehicleContractInstance: vehicleContractInstance
-     })
+    // vehicleAbi = await React.createContext({
+    //   vehicleModelContractInstance: vehicleModelContractInstance,
+    //   vehicleContractInstance: vehicleContractInstance
+    //  })
 
     // vehicleAbi.vehicleModelContractInstance = vehicleModelContractInstance;
     // vehicleAbi.vehicleContractInstance = vehicleContractInstance;

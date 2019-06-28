@@ -7,5 +7,6 @@
 ..\node_modules\.bin\truffle test ./test/Vehicle.test.js
 
 v = await VehicleModel.deployed()
-v.addModel('Toyota', 'Yarris', 5, 1, 1800, 0, 3, 4)
-v.addModel('Toyota', 'Passo', 5, 1, 1300, 0, 3, 4)
+v.addModel('Toyota', 'Yarris', 5, 1, '1800 cc', 0, 3, 4, 2018)
+v.addModel('Toyota', 'Passo', 5, 1, '1300 cc', 0, 3, 4, 2019)
+v.addModel('Isuzu', 'Space cab', 2, 0, '1800 cc/ 4 cylinders', 1, 8, 2, 1995)

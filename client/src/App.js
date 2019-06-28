@@ -9,16 +9,12 @@ import "./App.scss";
       loading: true,
     });
 
-    // Initial web3
-    const init = async() => {
-      return await initializeWeb3Api();
+    // Initialize web3
+    async function initWeb3() {
+      await initializeWeb3Api();
+      setState({loading: false});
     }
-    init().then(()=>{
-      setState({loading: false});
-    }).catch((e)=>{
-      console.log(e);
-      setState({loading: false});
-    });
+    initWeb3();
 
     return (
       <Main loading = {state.loading} />
