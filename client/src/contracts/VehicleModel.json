@@ -3517,12 +3517,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE3a8184E076013ECa3FBbadDe7951326A0686dd0",
-      "transactionHash": "0xaffea450cdcc742b1eaec8edaac1664080621cf9a7dca89b0a0e88d6ff32f9af"
+      "address": "0x180f37b4bBcc7E34464268f1e9AC6e85044bC63A",
+      "transactionHash": "0xa461f26684e4fc685dddd7690f4740d6b29eaaae32ca3c0c5a9912f681653902"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-06-27T12:43:07.240Z",
+  "updatedAt": "2019-06-28T04:33:07.464Z",
   "devdoc": {
     "methods": {
       "addModel(string,string,uint8,uint256,string,uint256,uint256,uint256,uint256)": {

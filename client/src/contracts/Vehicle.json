@@ -5488,12 +5488,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xED287C823a31400a0e179cc25aBAB714B9De9a82",
-      "transactionHash": "0x22501a4f9d0fe1744615ad523c30132444bc0f0ceef0169bbc633b9e86aba3e1"
+      "address": "0x1657804aCcF40e43a007F77DcECC9C50b31Bf5F3",
+      "transactionHash": "0xbb05f7449aca1e22f609be2676955cefe527426c82ff4db7bec641de653e8d13"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-06-27T12:43:07.249Z",
+  "updatedAt": "2019-06-28T04:33:07.502Z",
   "devdoc": {
     "methods": {
       "getModelIndexCount(uint256)": {

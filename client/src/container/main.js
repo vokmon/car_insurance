@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  LinearProgress,
   AppBar,
   IconButton,
   Toolbar,
@@ -10,7 +11,7 @@ import { menuList, routes } from './constants';
 import MenuIcon from '@material-ui/icons/Menu';
 import Sidebar from '../component/sidebar';
 
-export default function Main() {
+export default function Main(props) {
 
   const [state, setState] = React.useState({
     sideMenu: false,
@@ -25,6 +26,7 @@ export default function Main() {
 
   
   const createRouter = () => {
+
     return (
       <div>
         {routes.map((route, index) => (
@@ -72,9 +74,14 @@ export default function Main() {
         </Toolbar>
       </AppBar>
         <Sidebar toggleDrawer={toggleDrawer} menuList={menuList} open={state.sideMenu} />
-        <div style={{marginTop: 40, marginBottom: 40, marginLeft: 20, marginRight: 20}}>
-          {createRouter()}
-        </div>
+        {
+          props.loading? <LinearProgress color='secondary' />:
+          <div style={{marginTop: 40, marginBottom: 40, marginLeft: 20, marginRight: 20}}>
+            {createRouter()}
+          </div>
+        }
+        
     </Router>
+    
   );
 }
