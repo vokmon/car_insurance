@@ -77,7 +77,14 @@ import './VehicleModel.sol';
     uint _kilometres
   ) public {
 
+    // validate model id
     require(_modelId > 0 && _modelId <= vehicleModel.id(), 'Invalid model id');
+
+    // validate body number is never registered
+    require(bodyNumberIndex[_bodyNumber] == 0, 'Body number is already registered');
+
+    // validate engine number is never registered
+    require(engineIndex[_engineNumber] == 0, 'Engine number is already registered');
 
     vehicleUid++;
     registeredModels[vehicleUid] = VehicleDetail (
@@ -106,6 +113,11 @@ import './VehicleModel.sol';
     return modelIndex[_modelId].length;
   }
 
+  /**
+   * @dev Update the kilometres of the specified vehicle
+   * @param _bodyNumber the body number
+   * @param _kilometres kilometres
+   */
   function updateKilometres(string memory _bodyNumber, uint _kilometres) public {
     uint vId = bodyNumberIndex[_bodyNumber];
     require(vId > 0 && vId <= vehicleUid, "Invalid vehicle body number");

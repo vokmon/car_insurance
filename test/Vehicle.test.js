@@ -80,7 +80,43 @@ contract('VehicleModel', function([_, wallet, investor1, investor2, investor3]) 
       catch(error) {
         assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
       }
-    });   
+    });
+
+    it('fails to register a vehicle: body number is already registered', async function() {
+      try {
+        const v = vehicleList[0];
+        await this.vehicle.register (
+          1,
+          v.year,
+          v.bodyNumber,
+          'NEW_ENGINE_NUMBER',
+          v.color,
+          v.additionalFeatures,
+          v.kilometres,
+        );
+      }
+      catch(error) {
+        assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+      }
+    });
+
+    it('fails to register a vehicle: engine number is already registered', async function() {
+      try {
+        const v = vehicleList[0];
+        await this.vehicle.register (
+          1,
+          v.year,
+          'NEW_BODY_NUMBER',
+          v.engineNumber,
+          v.color,
+          v.additionalFeatures,
+          v.kilometres,
+        );
+      }
+      catch(error) {
+        assert(error.message.indexOf('revert')>=0, 'error message must contain revert');
+      }
+    });
   });
 
   describe('Retrieving vehicles', function() {

@@ -10,11 +10,11 @@ export default function VehicleModelContainer() {
   });
 
   useEffect(() => {
-    async function fetchMyAPI() {
+    async function fetchModels() {
       const response = await getAllModels();
       setState({ ...state, vehicleModels: response });
     }  
-    fetchMyAPI();
+    fetchModels();
   }, []);
 
   const columns = [

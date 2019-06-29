@@ -22,15 +22,16 @@ export const initializeWeb3Api = async () => {
     // Get the contract instance.
     const networkId = await web3.eth.net.getId();
 
-    const deployedNetwork = VehicleModelContract.networks[networkId];
+    const deployedVehicleModelNetwork = VehicleModelContract.networks[networkId];
     vehicleModelContractInstance = new web3.eth.Contract(
       VehicleModelContract.abi,
-      deployedNetwork.address,
+      deployedVehicleModelNetwork.address,
     );
 
+    const deployedVehicleNetwork = VehicleContract.networks[networkId];
     vehicleContractInstance = new web3.eth.Contract(
       VehicleContract.abi,
-      deployedNetwork.address,
+      deployedVehicleNetwork.address,
     );
 
     // vehicleAbi = await React.createContext({

@@ -51,10 +51,9 @@ export default function CustomizedTables(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.data.map(row => (
-            <StyledTableRow key={row.id}>
+          {props.data.map((row, rowIndex) => (
+            <StyledTableRow key={rowIndex}>
               { props.columns.map((column, index) => {
-                console.log(row[column.data]);
                 let data = row[column.data];
                 if (data._ethersType === 'BigNumber') {
                   data = data.toNumber();
