@@ -9,6 +9,7 @@ import VehicleModelContract from "../contracts/VehicleModel.json";
 
 export let vehicleModelContractInstance = null;
 export let vehicleContractInstance = null;
+export let account = null;
 
 export const initializeWeb3Api = async () => {
   try {
@@ -17,7 +18,7 @@ export const initializeWeb3Api = async () => {
 
     // Use web3 to get the user's accounts.
     // eslint-disable-next-line no-unused-vars
-    const accounts = await web3.eth.getAccounts();
+    const _account = await web3.eth.getAccounts();
 
     // Get the contract instance.
     const networkId = await web3.eth.net.getId();
@@ -34,6 +35,7 @@ export const initializeWeb3Api = async () => {
       deployedVehicleNetwork.address,
     );
 
+    account = _account;
     // vehicleAbi = await React.createContext({
     //   vehicleModelContractInstance: vehicleModelContractInstance,
     //   vehicleContractInstance: vehicleContractInstance

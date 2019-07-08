@@ -76,7 +76,7 @@ export default function Main(props) {
         <Sidebar toggleDrawer={toggleDrawer} menuList={menuList} open={state.sideMenu} />
         {
           props.loading? <LinearProgress color='secondary' />:
-          <div style={{marginTop: 40, marginBottom: 40, marginLeft: 20, marginRight: 20}}>
+          <div style={{marginTop: 20, marginBottom: 40, marginLeft: 20, marginRight: 20}}>
             {createRouter()}
           </div>
         }

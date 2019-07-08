@@ -21,3 +21,18 @@ v2.register(2, 2019, 'MR0GR39G306621821', '2KD6546371', 'orange', 'Central locki
 v2.register(3, 1996, 'MR0FZ29G102508625', '1KD9945364', 'scarlet', 'ABS brakes, Air conditioning, Central locking', 0)
 v2.register(3, 1997, 'MR0EZ39G408519911', '1KD9951728', 'silver', '', 0)
 v2.register(3, 1998, 'MR053BK4007014500', '2AZE051129', 'black', '', 0)
+
+For car buying - selling
+https://www.youtube.com/watch?v=gU64BZW5lQQ
+
+Vehicle licences & registration
+license plate -> {
+  vehicleId,
+  registration date,
+  person,
+  register type (NEW, RENEW),
+  expiry date
+}
+2 methods
+registerVehicle (one-off process)
+renewLicense (license can be expired and need renewal)
